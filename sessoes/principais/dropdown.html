@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FM-Facil</title>
+    <link rel="stylesheet" href="../source/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../source/css/fm-facil.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <div id="circuit">
+
+                    <h1>FM-Facil</h1>
+                    <button v-on:click="showCircuitInfo" type="button" class="btn btn-secondary">Consulta Pelo Identificador do Circuito</button>
+
+                    <div class="col-6">
+
+                        <form id="circuitForm" class="d-none">
+
+                            <div class="form-group">
+                                <hr>
+                                <input type="text" class="form-control" id="circuitId" aria-describedby="circuitId" placeholder="Identificador do Circuito">
+                                <hr>
+                                <textarea class="form-control" id="result" rows="25"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary">Consultar</button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../source/js/jquery-3.2.1.min.js"></script>
+    <script src="../source/js/popper.min.js"></script>
+    <script src="../source/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../source/js/fm-facil.js"></script>
+
+</body>
+
+</html>
