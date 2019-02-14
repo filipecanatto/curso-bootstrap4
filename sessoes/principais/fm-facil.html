@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FM-Facil</title>
+    <link rel="stylesheet" href="../source/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../source/codemirror-5.43.0/lib/codemirror.css">
+    <link rel="stylesheet" href="../source/css/fm-facil.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <div id="circuit">
+
+                    <h1>FM-Facil</h1>
+                    <button v-on:click="showCircuitInfo" type="button" class="btn btn-secondary">Consulta Pelo Identificador do Circuito</button>
+
+                    <div class="col-6">
+
+                        <form id="circuitForm" class="d-none">
+
+                            <div class="form-group">
+                                <hr>
+                                <input type="text" class="form-control" id="circuitId" aria-describedby="circuitId" placeholder="Identificador do Circuito">
+                                <hr>
+                                <textarea id="resultTextArea" name="resultTextArea" class="form-control" id="result" rows="50" disabled="false">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:add="http://www.cpqd.com.br/etics/AddressTypes" xmlns:all="http://www.cpqd.com.br/etics/facilities/AllocateInstallResource" xmlns:all1="http://www.cpqd.com.br/etics/facilities/AllocateInstallResourceTypes" xmlns:ful="http://www.cpqd.com.br/etics/FullAddressTypes" xmlns:head="http://www.cpqd.com.br/etics/headerContext" xmlns:res="http://www.cpqd.com.br/etics/ResourceOrderInfoTypes" xmlns:res1="http://www.cpqd.com.br/etics/ResourceServiceInfoTypes" xmlns:res2="http://www.cpqd.com.br/etics/ResourceAditionalServiceTypes" xmlns:sub="http://www.cpqd.com.br/etics/SubUnitTypes" xmlns:sup="http://www.cpqd.com.br/etics/SupplementaryInformationAllocateTypes">
+                                            <soapenv:Header>
+                                                <head:context>
+                                                    <regionCode>?</regionCode>
+                                                    <centralOffice>?</centralOffice>
+                                                </head:context>
+                                            </soapenv:Header>
+                                            <soapenv:Body>
+                                                <all:allocateResourceRequest>
+                                                    <all1:resourceOrder>TS-WS-CONF-CASO11</all1:resourceOrder>
+                                                    <all1:circuitType>2</all1:circuitType>
+                                                    <all1:serviceType>Red FTTx</all1:serviceType>
+                                                    <all1:circuitId>CR-WS-CONF-CASO11-wfc</all1:circuitId>
+                                                    <all1:address>
+                                                        <add:cityCode>15757000</add:cityCode>
+                                                        <add:streetType>CL</add:streetType>
+                                                        <add:streetName>CN01</add:streetName>
+                                                        <add:crossPathType>KR</add:crossPathType>
+                                                        <add:crossPathName>CN01_C</add:crossPathName>
+                                                        <add:streetNumber>30</add:streetNumber>
+                                                    </all1:address>
+                                                </all:allocateResourceRequest>
+                                            </soapenv:Body>
+                                        </soapenv:Envelope>
+                                </textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary">Consultar</button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../source/js/jquery-3.2.1.min.js"></script>
+    <script src="../source/js/popper.min.js"></script>
+    <script src="../source/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../source/codemirror-5.43.0/lib/codemirror.js"></script>
+    <script src="../source/js/fm-facil.js"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(resultTextArea, {
+            lineNumbers: false
+        });
+    </script>
+
+</body>
+
+</html>
