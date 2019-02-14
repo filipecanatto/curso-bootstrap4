@@ -1,7 +1,7 @@
 new Vue({
     el: '#circuit',
     data: {
-
+        resultXml: "resultado"
     },
     methods: {
         showCircuitInfo(event) {
@@ -11,6 +11,9 @@ new Vue({
                 $('#circuitForm').addClass("d-none");
             }
 
+        },
+        getResultXml(){
+            $('#resultTextArea').text(this.resultXml);
         }
     }
 })
