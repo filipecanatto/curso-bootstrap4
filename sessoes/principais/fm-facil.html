@@ -43,7 +43,7 @@
 
                             <div class="form-group">
 
-                                <textarea id="resultTextArea" name="resultTextArea" class="form-control" id="result" rows="25" disabled="false">
+                                <textarea id="resultTextArea" name="resultTextArea" class="form-control" id="result" rows="25" disabled>
                                 </textarea>
                             </div>
 
@@ -65,11 +65,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="../source/codemirror-5.43.0/lib/codemirror.js"></script>
     <script src="../source/js/fm-facil.js"></script>
-    <script>
-        var editor = CodeMirror.fromTextArea(resultTextAreainv, {
-            lineNumbers: false
-        });
-    </script>
+    <script src="../source/codemirror-5.43.0/mode/xml/xml.js"></script>
 
 </body>
 
