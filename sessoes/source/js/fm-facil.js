@@ -10,21 +10,12 @@ new Vue({
         "</note> \n"
     },
     methods: {
-        showCircuitInfo(event) {
-            if ($('#circuitForm').hasClass("d-none")) {
-                $('#circuitForm').removeClass("d-none");
-            } else {
-                $('#circuitForm').addClass("d-none");
-            }
-
-        },
         getResultXml(){
             // clean result area, if necessary
             $($( ".CodeMirror")[0]).remove();
             // get result
             $('#resultTextArea').text(this.resultXml);
             this.formatXml();
-            $('#resultTextArea').disable = true;
         },
         formatXml(){
             CodeMirror.fromTextArea(resultTextArea, {
