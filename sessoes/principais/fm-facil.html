@@ -29,7 +29,7 @@
 
                         <div class="collapse" id="collapseExample">
 
-                            <form id="circuitForm" class="">
+                            <form v-on:submit.prevent="onSubmit" id="circuitForm" class="">
 
                                 <div class="form-group row">
                                     <label for="circuitIdent" class="col-sm-4 col-form-label">Identificador do Circuito</label>
@@ -51,7 +51,7 @@
                                     </textarea>
                                 </div>
 
-                                <button v-on:click="getResultXml" type="button" class="btn btn-primary">Consultar</button>
+                                <button v-on:click="getResultXml" type="submit" class="btn btn-primary">Consultar</button>
 
                             </form>
 
